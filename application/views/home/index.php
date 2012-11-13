@@ -16,6 +16,10 @@
 				<div class="docs-nav"><?php echo $navigation;?></div>
 			</div>
 			<div class="span9">
+				<div class="alert warning fade in hidden">
+					<a class="close" data-dismiss="alert" href="#">&times;</a>
+					<strong>This is Laravel 2.1 documentation.</strong> For Laravel 3 docs, please refer to the <a href="http://laravel.com/docs">official docs</a>.
+				</div>
 				<div class="docs-content">
 					<?php echo $content;?>
 				</div>
@@ -30,6 +34,7 @@
 			</div>
 		</div>
 	</footer>
+	
 	<?php echo Asset::scripts(); ?>
 	<script type="text/javascript">
 	var _gaq = _gaq || [];

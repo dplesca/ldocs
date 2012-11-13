@@ -7,4 +7,8 @@ $(function(){
 		},
 		{offset:"-150%"}
 	);
+	setTimeout(function(){
+		$('.alert').removeClass('hidden');
+	}, 2000);
+	
 });
