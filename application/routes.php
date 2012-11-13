@@ -10,8 +10,15 @@ return array(
 		} else {
 			$navigation = str_replace('/docs', '', $parser->transform( File::get('../docs/contents.md') ) );
 			Cache::put('navigation', $navigation, 60*24);
-		}		
-		$content = $parser->transform(File::get('../docs/index.md'));
+		}
+
+		if (Cache::has('homepage')){
+			$content = Cache::get('homepage');
+		} else {
+			$content =  $parser->transform( File::get('../docs/index.md') );
+			Cache::put('homepage', $content, 60*24);
+		}
+		
 		return View::make('home.index')->with('navigation', $navigation)->with('content', $content);
 	},
 
@@ -24,10 +31,11 @@ return array(
 				$navigation = str_replace('/docs', '', $parser->transform( File::get('../docs/contents.md') ) );
 				Cache::put('navigation', $navigation, 60*24);
 			}
+
 			$content = str_replace('/docs', '', $parser->transform( File::get('../docs/'.$folder.'/'.$file.'.md') ) );
 			return View::make('home.index')->with('navigation', $navigation)->with('content', $content);
 		}
-		else return Response::error('404');	
+		else return Response::error('404');
 	}
 
 );
