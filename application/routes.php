@@ -37,16 +37,16 @@ return array(
 	'GET /' => function()
 	{		
 		$parser = new Markdown_Parser();
-		$navigation = str_replace('/docs', '', $parser->transform( file_get_contents('../docs/contents.md') ) );
-		$content = $parser->transform(file_get_contents('../docs/index.md'));
+		$navigation = str_replace('/docs', '', $parser->transform( File::get('../docs/contents.md') ) );
+		$content = $parser->transform(File::get('../docs/index.md'));
 		return View::make('home.index')->with('navigation', $navigation)->with('content', $content);
 	},
 
 	'GET /(:any)/(:any)' =>  function($folder, $file){
 		if(file_exists('../docs/'.$folder.'/'.$file.'.md')){
 			$parser = new Markdown_Parser();
-			$navigation = str_replace('/docs', '', $parser->transform( file_get_contents('../docs/contents.md') ) );
-			$content = str_replace('/docs', '', $parser->transform( file_get_contents('../docs/'.$folder.'/'.$file.'.md') ) );
+			$navigation = str_replace('/docs', '', $parser->transform( File::get('../docs/contents.md') ) );
+			$content = str_replace('/docs', '', $parser->transform( File::get('../docs/'.$folder.'/'.$file.'.md') ) );
 			return View::make('home.index')->with('navigation', $navigation)->with('content', $content);
 		}
 		else return Response::error('404');	
