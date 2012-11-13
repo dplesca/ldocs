@@ -44,7 +44,8 @@ return array(
 		Asset::add('jquery', 'js/jquery.min.js');
 		Asset::add('prettify-js', 'js/prettify.js');
 		Asset::add('waypoints', 'js/waypoints.min.js');
-		
+		Asset::add('scripts', 'js/scripts.js');
+
 		Asset::add('bootstrap', 'css/bootstrap.min.css');
 		Asset::add('prettify-css', 'css/prettify.css');
 	}),

@@ -31,9 +31,6 @@
 		</div>
 	</footer>
 	<?php echo Asset::scripts(); ?>
-	<script>
-	$(function(){$("pre").addClass("prettyprint"),prettyPrint(),$(".docs-content").waypoint(function(a,b){$(".to_top").toggleClass("hidden",b==="up")},{offset:"-150%"})})
-	</script>
 	<script type="text/javascript">
 	var _gaq = _gaq || [];
 	_gaq.push(['_setAccount', 'UA-5915627-8']);
