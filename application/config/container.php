@@ -51,4 +51,7 @@ return array(
 	|
 	*/
 
+	'markdown' => array('resolver' => function(){
+		return new Markdown_Parser();
+	})
 );
