@@ -18,7 +18,7 @@
 			<div class="span9">
 				<div class="alert warning fade in hidden">
 					<a class="close" data-dismiss="alert" href="#">&times;</a>
-					<strong>This is Laravel 2.1 documentation.</strong> For Laravel 3 docs, please refer to the <a href="http://laravel.com/docs">official docs</a>.
+					<strong>This is Laravel 2.1 documentation.</strong> For Laravel 3 docs, refer to <a href="http://three.laravel.com/">Laravel 3 docs</a>, for current version docs please refer to the <a href="http://laravel.com/docs">official docs</a>.
 				</div>
 				<div class="docs-content">
 					<?php echo $content;?>
