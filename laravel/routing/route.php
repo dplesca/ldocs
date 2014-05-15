@@ -61,7 +61,7 @@ class Route {
 			$this->uris = array_map(array($this, 'extract'), explode(', ', $key));
 		}
 
-		if ( ! $this->callable($callback))
+		if ( ! $this->is_callable($callback))
 		{
 			throw new \InvalidArgumentException('Invalid route defined for URI ['.$this->key.']');
 		}
@@ -75,7 +75,7 @@ class Route {
 	 * @param  mixed  $callback
 	 * @return bool
 	 */
-	protected function callable($callback)
+	protected function is_callable($callback)
 	{
 		return $callback instanceof Closure or is_array($callback) or is_string($callback);
 	}
